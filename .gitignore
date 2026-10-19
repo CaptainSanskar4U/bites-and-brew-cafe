@@ -1,0 +1,7 @@
+# Vercel local project metadata
+.vercel
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini

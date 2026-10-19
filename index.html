@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <title>Bites & Brew — The Fusion Café | Artisan Coffee & Global Comfort</title>
+    <meta name="description" content="Bites & Brew is an award-winning concept fusion café where single-origin artisan coffee meets bold global street food, handcrafted skillet pizzas, and 24k gold confections in an ambient Edison-lit sanctuary.">
+    <meta property="og:title" content="Bites & Brew — The Fusion Café">
+    <meta property="og:description" content="Where bold flavours meet artisan coffee culture. A sensory dining sanctuary.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#110E0B">
+
+    <!-- Premium Typography: Syne (Avant-Garde Display), Cormorant Garamond (Haute Editorial Serif), Plus Jakarta Sans (Crisp Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Schema.org Restaurant Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "Bites & Brew — The Fusion Café",
+      "image": "MOreCafePhtos/asthics.jpg",
+      "telephone": "+919082492524",
+      "servesCuisine": ["Fusion", "Coffee", "Italian", "Patisserie", "Street Food"],
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shop 4/5/6, Everest Heights, Parsik Hill, Sector 26",
+        "addressLocality": "CBD Belapur, Navi Mumbai",
+        "addressRegion": "Maharashtra",
+        "postalCode": "400614",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 19.023695,
+        "longitude": 73.0317656
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "10:00",
+          "closes": "23:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "23:30"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ═══════════════ TACTILE GRAIN OVERLAY ═══════════════ -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- ═══════════════ CUSTOM FLUID CURSOR ═══════════════ -->
+    <div class="custom-cursor" id="custom-cursor" aria-hidden="true">
+        <span class="cursor-label" id="cursor-label"></span>
+    </div>
+    <div class="custom-cursor-follower" id="cursor-follower" aria-hidden="true"></div>
+
+    <!-- ═══════════════ PRELOADER ═══════════════ -->
+    <div class="preloader" id="preloader" role="dialog" aria-label="Loading Bites & Brew experience">
+        <div class="preloader_content">
+            <div class="preloader_emblem">
+                <span class="preloader_monogram">B&B</span>
+                <span class="preloader_sub">THE FUSION CAFÉ</span>
+            </div>
+            <div class="preloader_progress-track">
+                <div class="preloader_progress-bar" id="preloader-bar"></div>
+            </div>
+            <div class="preloader_meta">
+                <span class="preloader_status">BREWING EXPERIENCE</span>
+                <span class="preloader_counter" id="preloader-counter">00%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ TOP ANNOUNCEMENT TICKER ═══════════════ -->
+    <aside class="announcement-ticker" id="announcement-ticker" aria-label="Café Announcements">
+        <div class="ticker_track">
+            <div class="ticker_content">
+                <span class="ticker_item"><span class="ticker_star">✦</span> NOW OPEN DAILY 10:00 AM — 11:30 PM</span>
+                <span class="ticker_item"><span class="ticker_star">✦</span> ARTISAN SINGLE-ORIGIN ROASTS & 24K GOLD DUST TARTS</span>
+                <span class="ticker_item"><span class="ticker_star">✦</span> SIGNATURE FUSION HOUR: 4:00 PM — 7:00 PM WEEKDAYS</span>
+                <span class="ticker_item"><span class="ticker_star">✦</span> TABLE RESERVATIONS NOW OPEN FOR WEEKEND TASTINGS</span>
+            </div>
+            <div class="ticker_content" aria-hidden="true">
+                <span class="ticker_item"><span class="ticker_star">✦</span> NOW OPEN DAILY 10:00 AM — 11:30 PM</span>
+                <span class="ticker_item"><span class="ticker_star">✦</span> ARTISAN SINGLE-ORIGIN ROASTS & 24K GOLD DUST TARTS</span>
+                <span class="ticker_item"><span class="ticker_star">✦</span> SIGNATURE FUSION HOUR: 4:00 PM — 7:00 PM WEEKDAYS</span>
+                <span class="ticker_item"><span class="ticker_star">✦</span> TABLE RESERVATIONS NOW OPEN FOR WEEKEND TASTINGS</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- ═══════════════ HEADER / NAVIGATION ═══════════════ -->
+    <header class="site-header" id="site-header">
+        <div class="container site-header_inner">
+            <nav class="header_nav header_nav--left" aria-label="Primary Navigation Left">
+                <a href="#story" class="nav_link" data-cursor="hover">Story</a>
+                <a href="#menu" class="nav_link" data-cursor="hover">Menu</a>
+                <a href="#vibe" class="nav_link" data-cursor="hover">Ambiance</a>
+            </nav>
+
+            <a href="#" class="brand-crest" aria-label="Bites & Brew Home" data-cursor="hover">
+                <span class="crest_initials">BITES <span>&</span> BREW</span>
+                <span class="crest_tag">THE FUSION CAFÉ • CBD BELAPUR, NAVI MUMBAI</span>
+            </a>
+
+            <nav class="header_nav header_nav--right" aria-label="Primary Navigation Right">
+                <a href="#gallery" class="nav_link" data-cursor="hover">Gallery</a>
+                <a href="#visit" class="nav_link" data-cursor="hover">Visit</a>
+                <button class="nav_cta-btn btn-magnetic" id="open-reserve-btn" data-cursor="hover">
+                    <span>Reserve Table</span>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </nav>
+
+            <button class="burger-btn" id="burger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="burger_line"></span>
+                <span class="burger_line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ═══════════════ MOBILE OVERLAY MENU ═══════════════ -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+        <div class="mobile-drawer_backdrop" id="drawer-backdrop"></div>
+        <div class="mobile-drawer_body">
+            <div class="mobile-drawer_header">
+                <span class="drawer_tag">NAVIGATION</span>
+                <button class="drawer_close" id="drawer-close" aria-label="Close menu">&times;</button>
+            </div>
+            <nav class="mobile-drawer_nav">
+                <a href="#story" class="mobile-nav_link" data-mobile-item><span class="link_num">01</span><span class="link_text">Our Story</span></a>
+                <a href="#menu" class="mobile-nav_link" data-mobile-item><span class="link_num">02</span><span class="link_text">Tasting Menu</span></a>
+                <a href="#vibe" class="mobile-nav_link" data-mobile-item><span class="link_num">03</span><span class="link_text">The Ambiance</span></a>
+                <a href="#gallery" class="mobile-nav_link" data-mobile-item><span class="link_num">04</span><span class="link_text">Visual Archive</span></a>
+                <a href="#visit" class="mobile-nav_link" data-mobile-item><span class="link_num">05</span><span class="link_text">Find Us</span></a>
+            </nav>
+            <div class="mobile-drawer_footer">
+                <div class="drawer_info-block">
+                    <span class="info_label">LOCATION</span>
+                    <p class="info_val">Shop 4/5/6, Everest Heights, Parsik Hill, CBD Belapur, Navi Mumbai<br>Open Daily 10:00 AM – 11:30 PM</p>
+                </div>
+                <button class="btn btn--gold btn--full" id="mobile-reserve-trigger">Reserve a Table</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ MAIN CONTENT ═══════════════ -->
+    <main id="main-content">
+
+        <!-- ═══ SECTION: HERO ═══ -->
+        <section class="hero-section" id="hero">
+            <div class="hero_canvas-wrap">
+                <div class="hero_image-scale" id="hero-img-scale">
+                    <img src="iloveimg-converted/C1.jpg" alt="Atmospheric interior of Bites & Brew with warm Edison lights, marble tables, and lush hanging plants" class="hero_bg-img" id="hero-bg-img">
+                </div>
+                <div class="hero_gradient-overlay"></div>
+                <div class="hero_vignette"></div>
+            </div>
+
+            <div class="container hero_inner">
+                <!-- Top Meta Bar -->
+                <div class="hero_meta-strip" data-hero-elem>
+                    <div class="live-status-pill">
+                        <span class="live-dot pulse"></span>
+                        <span class="live-status-text">OPEN NOW • UNTIL 11:30 PM</span>
+                    </div>
+                    <div class="hero_curation-badge">
+                        <span class="curation_star">★ ★ ★ ★ ★</span>
+                        <span class="curation_txt">4.9 / 5.0 • 1,200+ CURATED TASTINGS</span>
+                    </div>
+                </div>
+
+                <!-- Grand Headline -->
+                <div class="hero_headline-block">
+                    <h1 class="hero_title">
+                        <span class="title_row" data-hero-row>
+                            <span class="word-split">WHERE</span>
+                            <span class="word-split">BOLD</span>
+                            <span class="word-split word-highlight">FLAVOURS</span>
+                        </span>
+                        <span class="title_row" data-hero-row>
+                            <span class="word-split">COLLIDE</span>
+                            <span class="word-split word-italic">With Artisan</span>
+                            <span class="word-split">BREWS</span>
+                        </span>
+                    </h1>
+                </div>
+
+                <!-- Hero Sub & Bottom Deck -->
+                <div class="hero_bottom-deck" data-hero-elem>
+                    <p class="hero_lead">
+                        An intimate sanctuary crafted for the curious. Hand-poured single-origin roasts, 
+                        artisan stone-baked skillet pizzas, loaded comforts, and Lotus Biscoff & 24k gold confections beneath glowing Edison filaments.
+                    </p>
+
+                    <div class="hero_action-cluster">
+                        <a href="#menu" class="btn btn--gold btn--magnetic" data-cursor="explore">
+                            <span>Explore Tasting Menu</span>
+                            <span class="btn_icon-circle"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M7 13l5-5M7 13L2 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </a>
+                        <a href="#story" class="btn btn--glass" data-cursor="hover">
+                            <span>Our Philosophy</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Floating Specialty Card in Hero -->
+                <aside class="hero_floating-card" id="hero-floating-card" aria-label="Now Pouring at Bites & Brew">
+                    <div class="floating-card_thumb">
+                        <img src="iloveimg-converted/c3.jpg" alt="Artisan latte art coffee" loading="eager">
+                    </div>
+                    <div class="floating-card_detail">
+                        <span class="card_tiny-tag">NOW POURING</span>
+                        <h4 class="card_title">Velvet Gold Cortado</h4>
+                        <span class="card_notes">Single-origin roast • Micro-foam art</span>
+                    </div>
+                </aside>
+
+                <!-- Scroll Cue -->
+                <div class="hero_scroll-cue" id="hero-scroll-cue" aria-hidden="true">
+                    <span class="scroll_cue-label">SCROLL TO DISCOVER</span>
+                    <div class="scroll_mouse">
+                        <div class="scroll_wheel"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION: DUAL OPPOSITE MARQUEE ═══ -->
+        <section class="dual-marquee-strip" aria-hidden="true">
+            <!-- Row 1: Forward -->
+            <div class="marquee-row marquee-row--forward">
+                <div class="marquee-track" id="marquee-track-1">
+                    <div class="marquee-content">
+                        <span class="marquee-phrase">ARTISAN ROASTS</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase marquee-phrase--serif">24k Gold Confections</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase">BUBBLING SKILLET PIZZAS</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase marquee-phrase--serif">Lotus Biscoff Cheesecakes</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase">TRUFFLE LOADED FRIES</span>
+                        <span class="marquee-sep">✦</span>
+                    </div>
+                    <div class="marquee-content">
+                        <span class="marquee-phrase">ARTISAN ROASTS</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase marquee-phrase--serif">24k Gold Confections</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase">BUBBLING SKILLET PIZZAS</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase marquee-phrase--serif">Lotus Biscoff Cheesecakes</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase">TRUFFLE LOADED FRIES</span>
+                        <span class="marquee-sep">✦</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Reverse (Outline Style) -->
+            <div class="marquee-row marquee-row--reverse">
+                <div class="marquee-track" id="marquee-track-2">
+                    <div class="marquee-content marquee-content--stroke">
+                        <span class="marquee-phrase">WHERE CRAFT MEETS CRAVING</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase marquee-phrase--serif">Third-Wave Coffee Sanctuary</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase">GLOBAL STREET FOOD ELEVATED</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase marquee-phrase--serif">Eclectic Modern Comfort</span>
+                        <span class="marquee-sep">✦</span>
+                    </div>
+                    <div class="marquee-content marquee-content--stroke">
+                        <span class="marquee-phrase">WHERE CRAFT MEETS CRAVING</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase marquee-phrase--serif">Third-Wave Coffee Sanctuary</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase">GLOBAL STREET FOOD ELEVATED</span>
+                        <span class="marquee-sep">✦</span>
+                        <span class="marquee-phrase marquee-phrase--serif">Eclectic Modern Comfort</span>
+                        <span class="marquee-sep">✦</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 01: STORY & PHILOSOPHY ═══ -->
+        <section class="section section--story" id="story">
+            <div class="container">
+                <div class="section-tag" data-reveal>
+                    <span class="tag_index">[ 01 ]</span>
+                    <span class="tag_title">ORIGIN & CRAFT</span>
+                    <span class="tag_line"></span>
+                </div>
+
+                <div class="story_grid-layout">
+                    <!-- Left Editorial Column -->
+                    <div class="story_col-editorial" data-reveal>
+                        <h2 class="editorial-heading">
+                            Born from an obsession with the <span class="text-italic text-gold">unconventional.</span>
+                        </h2>
+
+                        <div class="story_body-content">
+                            <p class="paragraph-lead">
+                                Bites & Brew was conceived on a singular premise: Why must extraordinary specialty coffee exist only in sterile minimalism, and why must gourmet comfort food be stripped of craftsmanship?
+                            </p>
+                            <p class="paragraph-secondary">
+                                We tore up the predictable café handbook. In our kitchen, single-origin beans are extracted with scientific precision, while sizzling stone-baked pizzas bubble with aged mozzarella, loaded cheese fries are tossed in herb crema, and artisanal cheesecakes are adorned with wild blueberries and Lotus Biscoff crumbs.
+                            </p>
+                            <p class="paragraph-secondary">
+                                Surrounded by rustic bamboo finishes, carved purple pillars, and the warm amber glow of filament bulbs, Bites & Brew is an eclectic retreat designed for unhurried conversations and sensory indulgence.
+                            </p>
+                        </div>
+
+                        <!-- Stats Rollup -->
+                        <div class="story_stats-counter-strip" id="stats-strip">
+                            <div class="stat-cell">
+                                <span class="stat-number" data-target="48">0</span><span class="stat-suffix">h</span>
+                                <span class="stat-label">Slow Cold Steep</span>
+                            </div>
+                            <div class="stat-cell">
+                                <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+                                <span class="stat-label">Specialty Arabica</span>
+                            </div>
+                            <div class="stat-cell">
+                                <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+                                <span class="stat-label">Authentic Dishes</span>
+                            </div>
+                            <div class="stat-cell">
+                                <span class="stat-number" data-target="24">0</span><span class="stat-suffix">k</span>
+                                <span class="stat-label">Edible Gold Accents</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual Showcase: Asymmetric Composition using Real Photos -->
+                    <div class="story_col-visual" data-reveal="right">
+                        <!-- Primary Frame: Table with Menu & Carved Columns -->
+                        <div class="curated-frame frame--primary">
+                            <div class="frame_img-inner parallax-img-wrap">
+                                <img src="MOreCafePhtos/asd.jpg" alt="Interior view of Bites & Brew table with menu card and purple columns" class="story_showcase-img" loading="lazy">
+                            </div>
+                            <div class="frame_badge">
+                                <span class="badge_sub">THE DINING PARLOUR</span>
+                                <span class="badge_title">Authentic Table View</span>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Overlapping Frame: Coffee Calligraphy chalkboard -->
+                        <div class="curated-frame frame--secondary">
+                            <div class="frame_img-inner">
+                                <img src="MOreCafePhtos/fmaous.jpg" alt="Chalkboard art: Coffee is always a good idea" class="story_showcase-img-small" loading="lazy">
+                            </div>
+                            <div class="quote-pill">
+                                <span class="quote_mark">“</span>
+                                <span class="quote_text">Coffee is always a good idea.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 02: TASTING MENU SHOWCASE ═══ -->
+        <section class="section section--menu" id="menu">
+            <div class="container">
+                <div class="section-tag" data-reveal>
+                    <span class="tag_index">[ 02 ]</span>
+                    <span class="tag_title">THE TASTING CURATION</span>
+                    <span class="tag_line"></span>
+                </div>
+
+                <div class="menu_header-row" data-reveal>
+                    <div class="menu_title-group">
+                        <h2 class="editorial-heading">
+                            Crafted for the curious.<br>
+                            <span class="text-italic text-gold">A collision of signature tastes.</span>
+                        </h2>
+                    </div>
+
+                    <!-- Interactive Category Filter Tabs -->
+                    <div class="menu_filter-tabs" role="tablist" aria-label="Menu categories">
+                        <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">
+                            <span>All Highlights (8)</span>
+                        </button>
+                        <button class="filter-tab" data-filter="brews" role="tab" aria-selected="false">
+                            <span>Artisan Brews (2)</span>
+                        </button>
+                        <button class="filter-tab" data-filter="savory" role="tab" aria-selected="false">
+                            <span>Savory Fusion (2)</span>
+                        </button>
+                        <button class="filter-tab" data-filter="confections" role="tab" aria-selected="false">
+                            <span>Gold & Cheesecakes (4)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cards Grid: Curated with ALL REAL PHOTOGRAPHS -->
+                <div class="menu_cards-grid" id="menu-grid">
+
+                    <!-- Dish 1: Handcrafted Velvet Latte -->
+                    <article class="menu-card" data-category="brews" data-reveal data-tilt>
+                        <div class="menu-card_media">
+                            <img src="iloveimg-converted/c3.jpg" alt="Artisan latte with micro-foam latte art on branded table" class="menu-card_img" loading="lazy">
+                            <span class="menu-card_tier-badge">BARISTA SIGNATURE</span>
+                            <div class="menu-card_overlay-action">
+                                <span class="view_label">VIEW DETAILS ✦</span>
+                            </div>
+                        </div>
+                        <div class="menu-card_details">
+                            <div class="details_top">
+                                <h3 class="item_name">Handcrafted Velvet Latte</h3>
+                                <span class="item_price">₹280</span>
+                            </div>
+                            <p class="item_desc">Double-shot single origin espresso extracted at 9 bars, infused with velvety steamed whole milk and intricate pour art.</p>
+                            <div class="item_flavor-chips">
+                                <span class="flavor-chip">Roasted Hazelnut</span>
+                                <span class="flavor-chip">Silky Microfoam</span>
+                                <span class="flavor-chip">Single Origin</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Dish 2: Artisan Skillet Pepperoni & Olive Pizza -->
+                    <article class="menu-card" data-category="savory" data-reveal data-tilt>
+                        <div class="menu-card_media">
+                            <img src="MOreCafePhtos/dfsdhgjk.jpg" alt="Artisan skillet pizza with melted cheese, savory slices and olives" class="menu-card_img" loading="lazy">
+                            <span class="menu-card_tier-badge menu-card_tier-badge--gold">HOT FROM THE OVEN</span>
+                            <div class="menu-card_overlay-action">
+                                <span class="view_label">VIEW DETAILS ✦</span>
+                            </div>
+                        </div>
+                        <div class="menu-card_details">
+                            <div class="details_top">
+                                <h3 class="item_name">Stone Skillet Pepperoni Pizza</h3>
+                                <span class="item_price">₹190</span>
+                            </div>
+                            <p class="item_desc">Hand-stretched crust baked on stone, smothered with bubbling mozzarella, savory pepperoni slices, and black & green olives.</p>
+                            <div class="item_flavor-chips">
+                                <span class="flavor-chip">Bubbling Mozzarella</span>
+                                <span class="flavor-chip">Kalamata Olives</span>
+                                <span class="flavor-chip">Crisp Crust</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Dish 3: The Grand Patisserie Trio -->
+                    <article class="menu-card" data-category="confections" data-reveal data-tilt>
+                        <div class="menu-card_media">
+                            <img src="MOreCafePhtos/c1.jpg" alt="Platter of three artisan cheesecakes: Biscoff, Blueberry and Strawberry" class="menu-card_img" loading="lazy">
+                            <span class="menu-card_tier-badge menu-card_tier-badge--gold">CHEF'S SIGNATURE TRIO</span>
+                            <div class="menu-card_overlay-action">
+                                <span class="view_label">VIEW DETAILS ✦</span>
+                            </div>
+                        </div>
+                        <div class="menu-card_details">
+                            <div class="details_top">
+                                <h3 class="item_name">The Grand Patisserie Trio</h3>
+                                <span class="item_price">₹480</span>
+                            </div>
+                            <p class="item_desc">A celebration of three house cheesecakes: Lotus Biscoff with whole cookie, wild blueberry with rosettes, and strawberry compote on gold pedestals.</p>
+                            <div class="item_flavor-chips">
+                                <span class="flavor-chip">Lotus Biscoff</span>
+                                <span class="flavor-chip">Wild Blueberry</span>
+                                <span class="flavor-chip">Strawberry Cream</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Dish 4: Signature Loaded Cheese Fries -->
+                    <article class="menu-card" data-category="savory" data-reveal data-tilt>
+                        <div class="menu-card_media">
+                            <img src="iloveimg-converted/6.jpg" alt="Loaded cheese fries topped with melted mozzarella and house sauce" class="menu-card_img" loading="lazy">
+                            <span class="menu-card_tier-badge">HOUSE CRAVING</span>
+                            <div class="menu-card_overlay-action">
+                                <span class="view_label">VIEW DETAILS ✦</span>
+                            </div>
+                        </div>
+                        <div class="menu-card_details">
+                            <div class="details_top">
+                                <h3 class="item_name">Signature Loaded Cheese Fries</h3>
+                                <span class="item_price">₹140</span>
+                            </div>
+                            <p class="item_desc">Hand-cut double-fried golden potatoes drenched in molten mozzarella and creamy aged cheddar sauce, served with house ketchup.</p>
+                            <div class="item_flavor-chips">
+                                <span class="flavor-chip">Melted Mozzarella</span>
+                                <span class="flavor-chip">Aged Cheddar</span>
+                                <span class="flavor-chip">Crisp Golden</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Dish 5: Wild Blueberry Glazed Cheesecake -->
+                    <article class="menu-card" data-category="confections" data-reveal data-tilt>
+                        <div class="menu-card_media">
+                            <img src="MOreCafePhtos/asdasds.jpg" alt="Wild blueberry cold-set cheesecake with dark fruit compote on gold pastry board" class="menu-card_img" loading="lazy">
+                            <span class="menu-card_tier-badge">HOUSE PASTRY</span>
+                            <div class="menu-card_overlay-action">
+                                <span class="view_label">VIEW DETAILS ✦</span>
+                            </div>
+                        </div>
+                        <div class="menu-card_details">
+                            <div class="details_top">
+                                <h3 class="item_name">Wild Blueberry Cheesecake</h3>
+                                <span class="item_price">₹180</span>
+                            </div>
+                            <p class="item_desc">Buttery biscuit crust supporting a silky cream cheese mousse, crowned with glossy mountain wild blueberry reduction.</p>
+                            <div class="item_flavor-chips">
+                                <span class="flavor-chip">Wild Blueberry</span>
+                                <span class="flavor-chip">Cream Cheese</span>
+                                <span class="flavor-chip">Biscuit Crust</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Dish 6: Rose Petal Dark Ganache Cube -->
+                    <article class="menu-card" data-category="confections" data-reveal data-tilt>
+                        <div class="menu-card_media">
+                            <img src="MOreCafePhtos/adsdasd.jpg" alt="Gourmet cube pastry with dark chocolate, white rosettes and dried rose petals" class="menu-card_img" loading="lazy">
+                            <span class="menu-card_tier-badge">FLORAL CREATION</span>
+                            <div class="menu-card_overlay-action">
+                                <span class="view_label">VIEW DETAILS ✦</span>
+                            </div>
+                        </div>
+                        <div class="menu-card_details">
+                            <div class="details_top">
+                                <h3 class="item_name">Rose Petal Ganache Cube</h3>
+                                <span class="item_price">₹220</span>
+                            </div>
+                            <p class="item_desc">Dark cocoa pastry cube layered with silky chocolate cream, piped with monochrome florets and encircled by fragrant dried rose petals.</p>
+                            <div class="item_flavor-chips">
+                                <span class="flavor-chip">Belgian Cocoa</span>
+                                <span class="flavor-chip">Dried Rose</span>
+                                <span class="flavor-chip">Piped Ganache</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Dish 7: 24K Gold Ganache Tart -->
+                    <article class="menu-card" data-category="confections" data-reveal data-tilt>
+                        <div class="menu-card_media">
+                            <img src="iloveimg-converted/C2.jpg" alt="24k gold-dusted artisan dark chocolate tarts on gold plate" class="menu-card_img" loading="lazy">
+                            <span class="menu-card_tier-badge menu-card_tier-badge--gold">24K GOLD TIER</span>
+                            <div class="menu-card_overlay-action">
+                                <span class="view_label">VIEW DETAILS ✦</span>
+                            </div>
+                        </div>
+                        <div class="menu-card_details">
+                            <div class="details_top">
+                                <h3 class="item_name">24K Gold Ganache Tart</h3>
+                                <span class="item_price">₹420</span>
+                            </div>
+                            <p class="item_desc">70% single-estate Belgian dark chocolate ganache in a crisp cocoa crust, finished with hand-brushed 24-karat edible gold leaf.</p>
+                            <div class="item_flavor-chips">
+                                <span class="flavor-chip">Single Estate Cocoa</span>
+                                <span class="flavor-chip">24k Edible Gold</span>
+                                <span class="flavor-chip">Decadent</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Dish 8: 48-Hour Cold Extraction Brew -->
+                    <article class="menu-card" data-category="brews" data-reveal data-tilt>
+                        <div class="menu-card_media">
+                            <img src="iloveimg-converted/c3.jpg" alt="Specialty cold extraction brew" class="menu-card_img" loading="lazy">
+                            <span class="menu-card_tier-badge">SLOW EXTRACTION</span>
+                            <div class="menu-card_overlay-action">
+                                <span class="view_label">VIEW DETAILS ✦</span>
+                            </div>
+                        </div>
+                        <div class="menu-card_details">
+                            <div class="details_top">
+                                <h3 class="item_name">48-Hour Cold Extraction</h3>
+                                <span class="item_price">₹310</span>
+                            </div>
+                            <p class="item_desc">Coarse-ground high-altitude Arabica steeped in chilled filtered mountain water for 48 hours for a sweet, zero-bitterness finish.</p>
+                            <div class="item_flavor-chips">
+                                <span class="flavor-chip">Blackberry Notes</span>
+                                <span class="flavor-chip">Zero Bitterness</span>
+                                <span class="flavor-chip">Low Acidity</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Real In-Store Menu Card Banner -->
+                <div class="menu_in-store-notice" data-reveal>
+                    <div class="notice_inner">
+                        <span class="notice_icon">✦</span>
+                        <div class="notice_text">
+                            <strong>Authentic In-Store Menu:</strong> Explore our complete dining menu spanning over 50+ dishes including Chicken Mayo Pesto Paninis, Sizzlers, Italian Pastas, Shawarmas, and Wood-Fired Skillet Pizzas.
+                        </div>
+                        <button class="btn btn--gold btn--sm btn-magnetic" id="view-menu-board-btn" data-cursor="hover">
+                            <span>View Full Menu Board (50+ Items) ↗</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 03: THE SENSORY AMBIANCE / DAY & NIGHT ═══ -->
+        <section class="section section--vibe" id="vibe">
+            <div class="container">
+                <div class="section-tag" data-reveal>
+                    <span class="tag_index">[ 03 ]</span>
+                    <span class="tag_title">ATMOSPHERE & TEMPO</span>
+                    <span class="tag_line"></span>
+                </div>
+
+                <div class="vibe_grid-container">
+                    <div class="vibe_intro" data-reveal>
+                        <h2 class="editorial-heading">
+                            A space designed to shift<br>
+                            <span class="text-italic text-gold">with the rhythm of your day.</span>
+                        </h2>
+                        <p class="vibe_lead">
+                            From morning chalkboard welcomes to afternoon pizza sizzles and intimate evening cheesecake tastings, Bites & Brew transitions its lighting, music tempo, and kitchen specials through three distinct chapters.
+                        </p>
+
+                        <!-- Interactive Phase Selectors -->
+                        <div class="vibe_phases-nav" role="tablist">
+                            <button class="phase-btn active" data-phase="morning" role="tab">
+                                <span class="phase_time">10:00 — 14:00</span>
+                                <span class="phase_title">Chapter I: Morning Clarity</span>
+                            </button>
+                            <button class="phase-btn" data-phase="afternoon" role="tab">
+                                <span class="phase_time">14:00 — 18:00</span>
+                                <span class="phase_title">Chapter II: Fusion Rush</span>
+                            </button>
+                            <button class="phase-btn" data-phase="evening" role="tab">
+                                <span class="phase_time">18:00 — 23:30</span>
+                                <span class="phase_title">Chapter III: Golden Twilight</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Vibe Showcase Display Card -->
+                    <div class="vibe_display-card" id="vibe-card" data-reveal="right">
+                        <div class="vibe_card-image-wrap">
+                            <img src="MOreCafePhtos/fmaous.jpg" alt="Café lighting and mood" class="vibe_card-img" id="vibe-img">
+                            <div class="vibe_gradient"></div>
+                        </div>
+                        <div class="vibe_card-content">
+                            <div class="vibe_meta-pill">
+                                <span class="vibe_status-indicator"></span>
+                                <span class="vibe_status-name" id="vibe-title">Chapter I: Morning Clarity</span>
+                            </div>
+                            <p class="vibe_mood-quote" id="vibe-quote">
+                                “A chalkboard greeting reminds you that coffee is always a good idea. Sunlight filters across bamboo finishes as single-origin espresso beans are ground to perfection for the day's first pour.”
+                            </p>
+                            <div class="vibe_traits-grid" id="vibe-traits">
+                                <div class="trait_item">
+                                    <span class="trait_label">LIGHTING</span>
+                                    <span class="trait_value" id="trait-light">Soft Morning Natural + Low Edison</span>
+                                </div>
+                                <div class="trait_item">
+                                    <span class="trait_label">SOUNDSCAPE</span>
+                                    <span class="trait_value" id="trait-sound">Acoustic Lo-fi & Espresso Grinds</span>
+                                </div>
+                                <div class="trait_item">
+                                    <span class="trait_label">CHEF SPECIALTY</span>
+                                    <span class="trait_value" id="trait-special">Hand-Poured Cortado & Fresh Paninis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 04: CURATED VISUAL ARCHIVE / GALLERY ═══ -->
+        <section class="section section--gallery" id="gallery">
+            <div class="container">
+                <div class="section-tag" data-reveal>
+                    <span class="tag_index">[ 04 ]</span>
+                    <span class="tag_title">VISUAL ARCHIVE</span>
+                    <span class="tag_line"></span>
+                </div>
+
+                <div class="gallery_header-block" data-reveal>
+                    <h2 class="editorial-heading">
+                        Every frame captures<br>
+                        <span class="text-italic text-gold">the craft inside our walls.</span>
+                    </h2>
+                    <p class="gallery_subtext">Click any artifact to view in high definition.</p>
+                </div>
+
+                <!-- Curated Interactive Mosaic Grid with All Authentic Photos -->
+                <div class="gallery_mosaic-layout">
+
+                    <!-- Frame 1: The Storefront Facade -->
+                    <div class="gallery-tile tile--tall" data-reveal data-img="MOreCafePhtos/asthics.jpg" data-caption="Storefront Facade — Illuminated 3D Bites & Brew Signage & Bamboo Entrance" data-cursor="view">
+                        <div class="tile_inner">
+                            <img src="MOreCafePhtos/asthics.jpg" alt="Exterior storefront of Bites & Brew with glowing sign and bamboo architecture" class="tile_img" loading="lazy">
+                        </div>
+                        <div class="tile_caption-bar">
+                            <span class="tile_tag">STOREFRONT • 01</span>
+                            <h4 class="tile_name">The Sanctuary Facade</h4>
+                        </div>
+                    </div>
+
+                    <!-- Frame 2: Skillet Pizza -->
+                    <div class="tile tile--wide" data-reveal data-img="MOreCafePhtos/dfsdhgjk.jpg" data-caption="Hand-Crafted Stone Skillet Pepperoni & Olive Pizza" data-cursor="view">
+                        <div class="tile_inner">
+                            <img src="MOreCafePhtos/dfsdhgjk.jpg" alt="Fresh artisan pizza with melted mozzarella and olives" class="tile_img" loading="lazy">
+                        </div>
+                        <div class="tile_caption-bar">
+                            <span class="tile_tag">FUSION KITCHEN • 02</span>
+                            <h4 class="tile_name">Skillet Pepperoni Pizza</h4>
+                        </div>
+                    </div>
+
+                    <!-- Frame 3: The Grand Patisserie Trio -->
+                    <div class="tile" data-reveal data-img="MOreCafePhtos/c1.jpg" data-caption="Lotus Biscoff, Blueberry and Strawberry Cheesecakes on Gold" data-cursor="view">
+                        <div class="tile_inner">
+                            <img src="MOreCafePhtos/c1.jpg" alt="Three artisan cheesecakes on gold pedestals" class="tile_img" loading="lazy">
+                        </div>
+                        <div class="tile_caption-bar">
+                            <span class="tile_tag">PATISSERIE • 03</span>
+                            <h4 class="tile_name">Cheesecake Trio</h4>
+                        </div>
+                    </div>
+
+                    <!-- Frame 4: Rose Petal Ganache -->
+                    <div class="tile" data-reveal data-img="MOreCafePhtos/adsdasd.jpg" data-caption="Dark Cocoa Pastry with Two-Tone Florets & Dried Rose Petals" data-cursor="view">
+                        <div class="tile_inner">
+                            <img src="MOreCafePhtos/adsdasd.jpg" alt="Square chocolate pastry decorated with rose petals" class="tile_img" loading="lazy">
+                        </div>
+                        <div class="tile_caption-bar">
+                            <span class="tile_tag">CONFECTIONS • 04</span>
+                            <h4 class="tile_name">Rose Petal Ganache</h4>
+                        </div>
+                    </div>
+
+                    <!-- Frame 5: Interior Dining Parlour -->
+                    <div class="tile tile--wide" data-reveal data-img="iloveimg-converted/C1.jpg" data-caption="The Main Hall — Trailing Ivy & Edison Chandeliers" data-cursor="view">
+                        <div class="tile_inner">
+                            <img src="iloveimg-converted/C1.jpg" alt="Warm Edison lighting and trailing ivy in Bites & Brew" class="tile_img" loading="lazy">
+                        </div>
+                        <div class="tile_caption-bar">
+                            <span class="tile_tag">ATMOSPHERE • 05</span>
+                            <h4 class="tile_name">The Main Sanctuary</h4>
+                        </div>
+                    </div>
+
+                    <!-- Frame 6: Wild Blueberry Mini Cheesecake -->
+                    <div class="tile" data-reveal data-img="MOreCafePhtos/asdasds.jpg" data-caption="Single-Serve Cold-Set Wild Blueberry Cheesecake" data-cursor="view">
+                        <div class="tile_inner">
+                            <img src="MOreCafePhtos/asdasds.jpg" alt="Mini blueberry cheesecake on gold round board" class="tile_img" loading="lazy">
+                        </div>
+                        <div class="tile_caption-bar">
+                            <span class="tile_tag">PATISSERIE • 06</span>
+                            <h4 class="tile_name">Wild Blueberry Crown</h4>
+                        </div>
+                    </div>
+
+                    <!-- Frame 7: Barista Latte Art Pour -->
+                    <div class="tile" data-reveal data-img="iloveimg-converted/c3.jpg" data-caption="Single-Origin Espresso with Barista Heart Pour" data-cursor="view">
+                        <div class="tile_inner">
+                            <img src="iloveimg-converted/c3.jpg" alt="Latte art coffee on branded café table" class="tile_img" loading="lazy">
+                        </div>
+                        <div class="tile_caption-bar">
+                            <span class="tile_tag">BARISTA CRAFT • 07</span>
+                            <h4 class="tile_name">Heart Foam Extraction</h4>
+                        </div>
+                    </div>
+
+                    <!-- Frame 8: Loaded Cheese Fries -->
+                    <div class="tile" data-reveal data-img="iloveimg-converted/6.jpg" data-caption="Hand-Cut Double-Fried Fries Smothered in Melted Mozzarella" data-cursor="view">
+                        <div class="tile_inner">
+                            <img src="iloveimg-converted/6.jpg" alt="Loaded cheese fries with mozzarella cheese" class="tile_img" loading="lazy">
+                        </div>
+                        <div class="tile_caption-bar">
+                            <span class="tile_tag">COMFORT • 08</span>
+                            <h4 class="tile_name">Loaded Mozzarella Fries</h4>
+                        </div>
+                    </div>
+
+                    <!-- Frame 9: Velvet Parlour Seating -->
+                    <div class="tile tile--wide" data-reveal data-img="iloveimg-converted/c4.jpg" data-caption="Velvet Armchairs & Ambient Dining Parlour" data-cursor="view">
+                        <div class="tile_inner">
+                            <img src="iloveimg-converted/c4.jpg" alt="Café interior dining area with purple velvet armchairs" class="tile_img" loading="lazy">
+                        </div>
+                        <div class="tile_caption-bar">
+                            <span class="tile_tag">SANCTUARY • 09</span>
+                            <h4 class="tile_name">The Velvet Parlour</h4>
+                        </div>
+                    </div>
+
+                    <!-- Frame 10: Curated Oddities & Decor -->
+                    <div class="tile" data-reveal data-img="iloveimg-converted/C5.jpg" data-caption="Curated Antique Lanterns, Flora & Decorative Objects" data-cursor="view">
+                        <div class="tile_inner">
+                            <img src="iloveimg-converted/C5.jpg" alt="Decorative shelf display with plants and lanterns" class="tile_img" loading="lazy">
+                        </div>
+                        <div class="tile_caption-bar">
+                            <span class="tile_tag">DETAILS • 10</span>
+                            <h4 class="tile_name">Curated Oddities</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 05: CRITICAL ACCLAIM & GUEST QUOTES ═══ -->
+        <section class="section section--acclaim">
+            <div class="container">
+                <div class="section-tag" data-reveal>
+                    <span class="tag_index">[ 05 ]</span>
+                    <span class="tag_title">CRITICAL ACCLAIM</span>
+                    <span class="tag_line"></span>
+                </div>
+
+                <div class="acclaim_carousel" data-reveal>
+                    <div class="acclaim_card active" data-quote-index="0">
+                        <div class="acclaim_stars">★★★★★</div>
+                        <blockquote class="acclaim_quote">
+                            “Bites & Brew proves that culinary fusion isn't a novelty — when executed with this level of precision and aesthetic maturity, it becomes an unforgettable dining art form.”
+                        </blockquote>
+                        <div class="acclaim_author">
+                            <span class="author_name">Aria Montgomery</span>
+                            <span class="author_role">Culinary Editor, The Metropolitan Chronicle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accolades Strip -->
+                <div class="accolades_badges-strip" data-reveal>
+                    <div class="accolade-badge">
+                        <span class="badge_year">2023</span>
+                        <span class="badge_text">BEST NEW CONCEPT CAFÉ</span>
+                        <span class="badge_src">Culinary Excellence Guild</span>
+                    </div>
+                    <div class="accolade-badge">
+                        <span class="badge_year">2024</span>
+                        <span class="badge_text">TOP 10 SPECIALTY ROASTERS</span>
+                        <span class="badge_src">Third Wave Coffee Guide</span>
+                    </div>
+                    <div class="accolade-badge">
+                        <span class="badge_year">2025</span>
+                        <span class="badge_text">BEST AMBIENT INTERIOR DESIGN</span>
+                        <span class="badge_src">Hospitality Design Awards</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 06: VISIT, LIVE STATUS & PLANNER ═══ -->
+        <section class="section section--visit" id="visit">
+            <div class="container">
+                <div class="section-tag" data-reveal>
+                    <span class="tag_index">[ 06 ]</span>
+                    <span class="tag_title">EXPERIENCE & LOCATION</span>
+                    <span class="tag_line"></span>
+                </div>
+
+                <!-- Storefront Landmark Preview Card -->
+                <div class="visit_storefront-banner" data-reveal>
+                    <div class="storefront_thumb-wrap">
+                        <img src="MOreCafePhtos/asthics.jpg" alt="Bites & Brew illuminated storefront facade" class="storefront_img">
+                    </div>
+                    <div class="storefront_details">
+                        <span class="storefront_tag">LOOK FOR THE ILLUMINATED FACADE</span>
+                        <h3 class="storefront_title">Finding Bites & Brew</h3>
+                        <p class="storefront_desc">
+                            Located at Everest Heights on scenic Parsik Hill, CBD Belapur. Look for our signature bamboo pillar entrance and glowing 3D signage. Dedicated parking for two-wheelers and cars is available directly in front of the café.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="visit_main-grid">
+                    <!-- Left Column: Details & Real-Time Status -->
+                    <div class="visit_info-card" data-reveal>
+                        <div class="visit_status-header">
+                            <div class="live-status-pill">
+                                <span class="live-dot pulse"></span>
+                                <span class="status_dynamic" id="live-hours-status">OPEN TODAY • CLOSES AT 11:30 PM</span>
+                            </div>
+                            <span class="visit_est">WALK-INS WELCOME</span>
+                        </div>
+
+                        <h2 class="editorial-heading visit_heading">
+                            Step into the sanctuary.<br>
+                            <span class="text-italic text-gold">We have your seat ready.</span>
+                        </h2>
+
+                        <!-- Operating Hours Table -->
+                        <div class="visit_hours-table">
+                            <div class="hours-row is-today">
+                                <span class="day_name">Monday — Friday</span>
+                                <span class="hours_val">10:00 AM — 11:00 PM</span>
+                            </div>
+                            <div class="hours-row">
+                                <span class="day_name">Saturday — Sunday</span>
+                                <span class="hours_val">09:00 AM — 11:30 PM</span>
+                            </div>
+                            <div class="hours-row">
+                                <span class="day_name">Signature Fusion Tasting Hours</span>
+                                <span class="hours_val text-gold">Daily 16:00 — 19:00</span>
+                            </div>
+                        </div>
+
+                        <!-- Direct Address & Actions -->
+                        <div class="visit_location-actions">
+                            <div class="address_block">
+                                <span class="address_label">THE SANCTUARY ADDRESS</span>
+                                <address class="address_text" id="cafe-address">
+                                    Shop 4/5/6, Everest Heights, Parsik Hill,<br>
+                                    Sector 26, CBD Belapur, Navi Mumbai,<br>
+                                    Maharashtra 400614
+                                </address>
+                            </div>
+                            <div class="address_button-group">
+                                <button class="btn btn--gold btn--sm btn-magnetic" id="copy-address-btn" data-cursor="hover">
+                                    <span>Copy Address</span>
+                                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M10.5 4.5H12a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1v-1.5M9 9.5H2a1 1 0 01-1-1v-7a1 1 0 011-1h7a1 1 0 011 1v7a1 1 0 01-1 1z" stroke="currentColor" stroke-width="1.4"/></svg>
+                                </button>
+                                <a href="https://www.google.com/maps/place/Bites+%26+Brew+The+Fusion+Caf%C3%A9/@19.0170641,73.0231547,15z/data=!4m10!1m2!2m1!1sShop+4%2F5%2F6,+Everest+Heights,+Parsik+Hill,+Sector+26,+CBD+Belapur,+Navi+Mumbai,+Maharashtra+400614!3m6!1s0x3be7c3cfd0ff6c55:0xb6afbdcb1ca1dd01!8m2!3d19.023695!4d73.0317656!15sCmFTaG9wIDQvNS82LCBFdmVyZXN0IEhlaWdodHMsIFBhcnNpayBIaWxsLCBTZWN0b3IgMjYsIENCRCBCZWxhcHVyLCBOYXZpIE11bWJhaSwgTWFoYXJhc2h0cmEgNDAwNjE0Wl0iW3Nob3AgNCA1IDYgZXZlcmVzdCBoZWlnaHRzIHBhcnNpayBoaWxsIHNlY3RvciAyNiBjYmQgYmVsYXB1ciBuYXZpIG11bWJhaSBtYWhhcmFzaHRyYSA0MDA2MTSSAQRjYWZl4AEA!16s%2Fg%2F11t_sngg_6?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="btn btn--ghost btn--sm" data-cursor="hover">
+                                    <span>Open in Google Maps ↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Quick RSVP Form -->
+                    <div class="visit_rsvp-panel" data-reveal="right">
+                        <div class="rsvp_panel-inner">
+                            <div class="rsvp_header">
+                                <span class="rsvp_badge">TABLE INQUIRY & RESERVATION</span>
+                                <h3 class="rsvp_title">Reserve Your Table</h3>
+                                <p class="rsvp_sub">Enjoy priority seating and our chef’s welcome pour.</p>
+                            </div>
+
+                            <form class="rsvp_form" id="rsvp-form">
+                                <div class="form_grid">
+                                    <div class="form_field">
+                                        <label for="rsvp-name" class="field_label">FULL NAME</label>
+                                        <input type="text" id="rsvp-name" class="field_input" placeholder="e.g. Elena Vance" required>
+                                    </div>
+                                    <div class="form_field">
+                                        <label for="rsvp-phone" class="field_label">PHONE NUMBER</label>
+                                        <input type="tel" id="rsvp-phone" class="field_input" placeholder="+91 90824 92524" required>
+                                    </div>
+                                    <div class="form_field">
+                                        <label for="rsvp-date" class="field_label">DATE</label>
+                                        <input type="date" id="rsvp-date" class="field_input" required>
+                                    </div>
+                                    <div class="form_field">
+                                        <label for="rsvp-guests" class="field_label">GUESTS</label>
+                                        <select id="rsvp-guests" class="field_input">
+                                            <option value="2">2 Guests (Intimate Table)</option>
+                                            <option value="3">3 - 4 Guests (Booth)</option>
+                                            <option value="6">5 - 8 Guests (Parlour Table)</option>
+                                            <option value="group">Private Tasting (8+)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form_field">
+                                    <label for="rsvp-notes" class="field_label">OCCASION / PREFERENCES (OPTIONAL)</label>
+                                    <input type="text" id="rsvp-notes" class="field_input" placeholder="e.g. Lotus Biscoff tasting, quiet booth">
+                                </div>
+                                <button type="submit" class="btn btn--gold btn--full btn-magnetic" id="rsvp-submit-btn" data-cursor="hover">
+                                    <span>Request Table Reservation</span>
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                                <span class="rsvp_privacy">Instant confirmation via SMS & WhatsApp. No deposit required.</span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SECTION 07: IMMERSIVE GRAND CTA ═══ -->
+        <section class="section section--grand-cta">
+            <div class="grand-cta_bg">
+                <img src="iloveimg-converted/C2.jpg" alt="Artisan chocolate tarts dusted with gold" class="grand-cta_img" loading="lazy">
+                <div class="grand-cta_overlay"></div>
+            </div>
+            <div class="container grand-cta_content" data-reveal>
+                <span class="cta_crest-tag">✦ THE BITES & BREW SANCTUARY ✦</span>
+                <h2 class="cta_grand-title">
+                    Every sip has a soul.<br>
+                    <span class="text-italic text-gold">Every bite tells a story.</span>
+                </h2>
+                <p class="cta_lead">
+                    Experience Navi Mumbai's finest collision of third-wave specialty coffee, wood-fired skillet pizzas, and creative patisserie.
+                </p>
+                <div class="cta_buttons">
+                    <button class="btn btn--gold btn--lg btn-magnetic" id="grand-reserve-btn" data-cursor="hover">
+                        <span>Book Your Experience</span>
+                    </button>
+                    <a href="#menu" class="btn btn--glass btn--lg" data-cursor="hover">
+                        <span>Explore Full Menu</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="site-footer">
+        <div class="container footer_container">
+            <!-- Footer Watermark Logo -->
+            <div class="footer_watermark-brand" aria-hidden="true">
+                <span>BITES & BREW</span>
+            </div>
+
+            <div class="footer_top-grid">
+                <!-- Col 1: Brand Philosophy -->
+                <div class="footer_col footer_col--brand">
+                    <div class="brand_title">BITES & BREW</div>
+                    <span class="brand_sub">THE FUSION CAFÉ • CBD BELAPUR, NAVI MUMBAI</span>
+                    <p class="footer_blurb">
+                        An award-winning sanctuary where specialty single-origin coffee intersects with eclectic global street bites, bubbling skillet pizzas, and hand-finished cheesecakes.
+                    </p>
+                    <div class="footer_socials">
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram" data-cursor="hover">IG</a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook" data-cursor="hover">FB</a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter / X" data-cursor="hover">TW</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div class="footer_col">
+                    <h5 class="footer_heading">EXPLORE</h5>
+                    <ul class="footer_nav-list">
+                        <li><a href="#story" class="footer_link">Our Philosophy</a></li>
+                        <li><a href="#menu" class="footer_link">Signature Tasting Menu</a></li>
+                        <li><a href="#vibe" class="footer_link">Ambiance & Tempo</a></li>
+                        <li><a href="#gallery" class="footer_link">Visual Archive</a></li>
+                        <li><a href="#visit" class="footer_link">Reservations & Location</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Hours & Contact -->
+                <div class="footer_col">
+                    <h5 class="footer_heading">THE SANCTUARY</h5>
+                    <p class="footer_contact-line"><strong>Monday — Friday:</strong> 10:00 AM – 11:00 PM</p>
+                    <p class="footer_contact-line"><strong>Saturday — Sunday:</strong> 09:00 AM – 11:30 PM</p>
+                    <p class="footer_contact-line"><strong>Telephone:</strong> <a href="tel:+919082492524" class="footer_link">+91 90824 92524</a></p>
+                    <p class="footer_contact-line"><strong>Direct Concierge:</strong> <a href="mailto:concierge@bitesandbrew.cafe" class="footer_link">concierge@bitesandbrew.cafe</a></p>
+                </div>
+
+                <!-- Col 4: Newsletter / Tasting Club -->
+                <div class="footer_col footer_col--newsletter">
+                    <h5 class="footer_heading">THE TASTING CIRCLE</h5>
+                    <p class="footer_subtext">Receive private invitations to seasonal bean unveilings and weekend secret pastry tastings.</p>
+                    <form class="footer_newsletter-form" id="newsletter-form">
+                        <div class="input_wrap">
+                            <input type="email" placeholder="Enter your email address" class="newsletter_input" required>
+                            <button type="submit" class="newsletter_submit" aria-label="Subscribe" data-cursor="hover">→</button>
+                        </div>
+                        <span class="newsletter_note" id="newsletter-msg"></span>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright & Back to Top -->
+            <div class="footer_bottom-row">
+                <p class="copyright_text">© 2026 Bites & Brew — The Fusion Café. All rights reserved. Concept & Design for Pitch.</p>
+                <div class="footer_meta-links">
+                    <button class="back-to-top btn-magnetic" id="back-to-top" aria-label="Return to top of page" data-cursor="hover">
+                        <svg class="progress-ring" width="36" height="36" viewBox="0 0 36 36">
+                            <circle class="ring-bg" cx="18" cy="18" r="15" fill="none" stroke="rgba(247,242,231,0.1)" stroke-width="2"/>
+                            <circle class="ring-indicator" id="scroll-progress-ring" cx="18" cy="18" r="15" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="94.25" stroke-dashoffset="94.25"/>
+                        </svg>
+                        <span class="back-top_arrow">↑</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════ LIGHTBOX MODAL ═══════════════ -->
+    <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="lightbox_backdrop" id="lightbox-backdrop"></div>
+        <div class="lightbox_container">
+            <button class="lightbox_close" id="lightbox-close" aria-label="Close image">&times;</button>
+            <div class="lightbox_image-wrapper">
+                <img src="" alt="" class="lightbox_active-img" id="lightbox-img">
+            </div>
+            <div class="lightbox_caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ AUTHENTIC FULL MENU CARD MODAL ═══════════════ -->
+    <div class="menu-board-modal" id="menu-board-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal_backdrop" id="menu-board-backdrop"></div>
+        <div class="menu-board_dialog">
+            <button class="modal_close" id="menu-board-close" aria-label="Close menu board">&times;</button>
+            <div class="menu-board_header">
+                <span class="modal_tag">OFFICIAL IN-STORE MENU CARD</span>
+                <h3 class="modal_title">Complete Kitchen Menu</h3>
+                <p class="modal_desc">Featuring our complete range of Paninis, Sizzlers, Skillet Pizzas, Pastas, Fries & Shawarma plates.</p>
+            </div>
+            <div class="menu-board_img-container">
+                <img src="MOreCafePhtos/asdeds.jpg" alt="Official Bites & Brew in-store food menu card" class="menu-board_full-img">
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ TOAST NOTIFICATION ═══════════════ -->
+    <div class="toast-notification" id="toast-notification" role="status" aria-live="polite">
+        <span class="toast_icon">✦</span>
+        <span class="toast_message" id="toast-message">Address copied to clipboard!</span>
+    </div>
+
+    <!-- ═══════════════ RESERVATION MODAL ═══════════════ -->
+    <div class="reservation-modal" id="reservation-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal_backdrop" id="reserve-modal-backdrop"></div>
+        <div class="modal_dialog">
+            <button class="modal_close" id="reserve-modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal_content">
+                <span class="modal_tag">VIP TABLE EXPERIENCE</span>
+                <h3 class="modal_title">Reserve at Bites & Brew</h3>
+                <p class="modal_desc">Select your date, guest count, and seating preference. Walk-ins are always welcomed; reservations guarantee your preferred table.</p>
+                <form class="modal_form" id="modal-reserve-form">
+                    <div class="modal_fields-grid">
+                        <div class="form_field">
+                            <label class="field_label">GUEST NAME</label>
+                            <input type="text" class="field_input" required placeholder="Elena Vance">
+                        </div>
+                        <div class="form_field">
+                            <label class="field_label">PHONE NUMBER</label>
+                            <input type="tel" class="field_input" required placeholder="+91 90824 92524">
+                        </div>
+                        <div class="form_field">
+                            <label class="field_label">DATE</label>
+                            <input type="date" class="field_input" required>
+                        </div>
+                        <div class="form_field">
+                            <label class="field_label">TIME</label>
+                            <select class="field_input">
+                                <option>12:00 PM — Lunch & Coffee</option>
+                                <option>03:30 PM — Afternoon Tasting</option>
+                                <option>05:30 PM — Sunset Fusion Hour</option>
+                                <option selected>07:30 PM — Prime Dinner & Skillet Pizza</option>
+                                <option>09:30 PM — Late Night Cheesecake Tasting</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form_field">
+                        <label class="field_label">SPECIAL TASTING REQUEST</label>
+                        <input type="text" class="field_input" placeholder="e.g. Lotus Biscoff tasting, booth table">
+                    </div>
+                    <button type="submit" class="btn btn--gold btn--full">Confirm Reservation Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
